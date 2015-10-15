@@ -1,6 +1,9 @@
 require "vamp/version"
 
 module Vamp
+
+  # ascii art vampire by the queen of ascii art: Joan Stark
+  #   https://en.wikipedia.org/wiki/Joan_Stark
   VAMPIRE = <<-END
         =/\\                 /\\=
         / \\'._   (\\_/)   _.'/ \\
@@ -11,6 +14,7 @@ module Vamp
     `            "   "            `
   END
 
+  # return random quote
   def quote
     [
       "Twilight, again. Another ending. No matter how perfect the day is, it always has to end.",
