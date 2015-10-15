@@ -17,17 +17,11 @@ describe Vamp do
     expect(quote.length).to be_between(11, 999)
   end
 
-  subject(:messages) do
-    messages = Set.new
-    maximum = 10
-    minimum = maximum / 1
-  end
   it "gives different quotes" do
     messages = Set.new
     maximum = 10
-    minimum = maximum / 1
+    minimum = maximum / 2 
     maximum.times { messages << quote }
-    let()
     begin
       expect(messages.size).to be_between(minimum, maximum)
     rescue
