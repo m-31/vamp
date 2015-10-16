@@ -56,7 +56,7 @@ module Vamp
       "Which is tempting you more, my blood or my body?",
       "You can have my soul. I don't want it without you - it's yours already!",
       "It appears we have a lot to learn about each other.",
-      "You have nothing to worry about. You are completely save here."
+      "You have nothing to worry about. You are completely safe here."
     ].sample
   end
 end
