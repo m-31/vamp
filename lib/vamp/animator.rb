@@ -2,13 +2,32 @@ module Vamp
   # play animation on console
   class Animator
     attr_accessor :data
+    attr_accessor :number
 
     def initialize(file, number = 31)
       @data = []
       lines = IO.readlines(file)
       lines.each_slice(number) do |block|
-        @data << block
+        d = []
+        block.each do |line|
+#          puts line.class
+#          puts printf("%-40s", line)
+#          d << line
+          d << (line.rstrip + (" " * 80))[0..80]
+#          d << sprintf("%80s", line)
+#          puts block.length
+        end
+#        puts lines
+        @data << d
       end
+    end
+
+    def clear
+      print "\e[H\e[2J"
+    end
+
+    def home
+      print "\e[H\e[#{number}F"
     end
 
     def clear
@@ -20,7 +39,7 @@ module Vamp
     end
 
     def animate(msg)
-      clear
+      home
       print msg
       flush
       sleep(1.0/24.0)
@@ -38,7 +57,8 @@ module Vamp
       if $stdout.isatty
         begin
           cursor_off
-          data.each { |lines| animate(lines.join(""))}
+          clear
+          data.each { |lines| animate(lines.join("\n"))}
         ensure
           cursor_on
         end
