@@ -6,6 +6,7 @@ module Vamp
 
     def initialize(file, number = 31)
       @data = []
+      @number = number
       lines = IO.readlines(file)
       lines.each_slice(number) do |block|
         d = []
@@ -30,8 +31,13 @@ module Vamp
       print "\e[H\e[#{number}F"
     end
 
-    def clear
-      print "\e[H\e[2J"
+    def home
+      print "\e[H\e[#{number}F"
+    end
+
+    def down
+      # number.times { puts }
+      print "\e[H\e[#{number}E"
     end
 
     def flush
@@ -61,6 +67,7 @@ module Vamp
           data.each { |lines| animate(lines.join("\n"))}
         ensure
           cursor_on
+          down
         end
       end
     end
