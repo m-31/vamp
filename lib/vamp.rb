@@ -1,4 +1,5 @@
 require "vamp/version"
+require "vamp/animator"
 
 module Vamp
 
