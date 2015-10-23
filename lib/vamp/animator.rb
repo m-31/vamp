@@ -48,7 +48,7 @@ module Vamp
       home
       print msg
       flush
-      sleep(1.0/24.0)
+      sleep(1.0/48.0)
     end
 
     def cursor_off

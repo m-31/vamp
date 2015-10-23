@@ -57,7 +57,10 @@ module Vamp
       "Which is tempting you more, my blood or my body?",
       "You can have my soul. I don't want it without you - it's yours already!",
       "It appears we have a lot to learn about each other.",
-      "You have nothing to worry about. You are completely safe here."
+      "You have nothing to worry about. You are completely safe here.",
+      "One thing vampire children are taught is, never run with a wooden stake.",
+      "The unknown is now my reality, for I do not yet understand what I have become." \
+      " The future brings so many questions, so many fears. But the first step, the first day, has arrived."
     ].sample
   end
 end
