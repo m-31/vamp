@@ -62,7 +62,12 @@ module Vamp
       "The unknown is now my reality, for I do not yet understand what I have become." \
       " The future brings so many questions, so many fears. But the first step, the first day, has arrived.",
       "Please forgive me, but I desperately need your guidance. I apologise for breaking the Chain and awakening you" \
-      " a head of schedule, but I fear we may all be in grave danger."
+      " a head of schedule, but I fear we may all be in grave danger.",
+      "I just feel like all the sand is at the bottom of the hour glass or something.",
+      "Only those prepared to die will find eternal life.",
+      "I remember everything. It's a burden.",
+      "I am teaching you something you don't want to know.",
+      "Death is not the worst. There are things more horrible than death."
     ].sample
   end
 end
