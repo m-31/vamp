@@ -1,4 +1,4 @@
-# Vamp - necessaries for the elegant vampire
+# Vamp - necessities for the elegant vampire
 
 Want to pimp up your command line interface?
 Just require this gem insert some code and your CLI makes witty vampire quotes.
