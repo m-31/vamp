@@ -61,7 +61,7 @@ module Vamp
       "One thing vampire children are taught is, never run with a wooden stake.",
       "The unknown is now my reality, for I do not yet understand what I have become." \
       " The future brings so many questions, so many fears. But the first step, the first day, has arrived.",
-      "Please forgive me, but I desperately need your guidance. I apologise for breaking the Chain and awakening you " \
+      "Please forgive me, but I desperately need your guidance. I apologise for breaking the Chain and awakening you" \
       " a head of schedule, but I fear we may all be in grave danger."
     ].sample
   end
