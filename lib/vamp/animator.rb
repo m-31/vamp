@@ -4,19 +4,20 @@ module Vamp
     attr_accessor :data
     attr_accessor :number
 
-    def initialize(file, number = 31)
+    def initialize(file, number = 31, height = number)
       @data = []
       @number = number
       lines = IO.readlines(file)
       lines.each_slice(number) do |block|
         d = []
-        block.each do |line|
+        block.each_with_index do |line, index|
 #          puts line.class
 #          puts printf("%-40s", line)
 #          d << line
           d << (line.rstrip + (" " * 80))[0..80]
 #          d << sprintf("%80s", line)
 #          puts block.length
+          break if index >= height
         end
 #        puts lines
         @data << d
@@ -77,5 +78,7 @@ end
 if __FILE__ == $0
   # get root directory of this gem
   animator = Vamp::Animator.new(File.join(Gem.loaded_specs["vamp"].gem_dir, "files", "pyramid.txt"))
+  animator.play
+  animator = Vamp::Animator.new(File.join(Gem.loaded_specs["vamp"].gem_dir, "files", "vampire.txt"), 31, 24)
   animator.play
 end
