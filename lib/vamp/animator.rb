@@ -76,9 +76,8 @@ module Vamp
 end
 
 if __FILE__ == $0
-  # get root directory of this gem
-  animator = Vamp::Animator.new(File.join(Gem.loaded_specs["vamp"].gem_dir, "files", "pyramid.txt"))
-  animator.play
+#  animator = Vamp::Animator.new(File.join(Gem.loaded_specs["vamp"].gem_dir, "files", "pyramid.txt"))
+#  animator.play
   animator = Vamp::Animator.new(File.join(Gem.loaded_specs["vamp"].gem_dir, "files", "vampire.txt"), 31, 24)
-  animator.play
+  8.times { animator.play }
 end
