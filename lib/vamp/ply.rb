@@ -1,6 +1,6 @@
-require_releatve "ply/ply_object"
-require_releatve "ply/creator"
-require_releatve "ply/cube"
+require_relative "ply/ply_object"
+require_relative "ply/cube"
+require_relative "ply/vampire"
 
 module Vamp
   module Ply

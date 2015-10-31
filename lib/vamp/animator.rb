@@ -1,12 +1,21 @@
+require_relative "colorize"
+
 module Vamp
   # play animation on console
   class Animator
-    attr_accessor :data
-    attr_accessor :number
+    attr_accessor :data   # complete animation lines
+    attr_accessor :number # animation source height
+    attr_accessor :width  # animation width
+    attr_accessor :height # animation height
+    attr_accessor :scroll # running text
 
-    def initialize(file, number = 31, height = number)
+    def initialize(file, number = 31, height = number, scroll)
       @data = []
       @number = number
+      @width = 80
+      @height = height
+      @scroll = scroll
+      @offset = 0
       lines = IO.readlines(file)
       lines.each_slice(number) do |block|
         d = []
@@ -29,16 +38,16 @@ module Vamp
     end
 
     def home
-      print "\e[H\e[#{number}F"
+      print "\e[H\e[#{height}F"
     end
 
     def home
-      print "\e[H\e[#{number}F"
+      print "\e[H\e[#{height}F"
     end
 
-    def down
+    def down(lines = @height)
       # number.times { puts }
-      print "\e[H\e[#{number}E"
+      print "\e[H\e[#{lines}E"
     end
 
     def flush
@@ -47,7 +56,8 @@ module Vamp
 
     def animate(msg)
       home
-      print msg
+      puts Vamp::Colorize.colorize("red", msg)
+      puts Vamp::Colorize.colorize("blue", animate_line) if scroll
       flush
       sleep(1.0/48.0)
     end
@@ -60,24 +70,24 @@ module Vamp
       print "\e[H\e[?25h"
     end
 
+    def animate_line
+      @offset += 1
+      "#{@scroll[(@offset / 2)..(@offset / 2 + @width - 1)]}"
+    end
+
     def play
       if $stdout.isatty
         begin
           cursor_off
           clear
-          data.each { |lines| animate(lines.join("\n"))}
+          data.each do
+            |lines| animate(lines.join("\n"))
+          end
         ensure
           cursor_on
-          down
+          down(@height + 2)
         end
       end
     end
   end
-end
-
-if __FILE__ == $0
-#  animator = Vamp::Animator.new(File.join(Gem.loaded_specs["vamp"].gem_dir, "files", "pyramid.txt"))
-#  animator.play
-  animator = Vamp::Animator.new(File.join(Gem.loaded_specs["vamp"].gem_dir, "files", "vampire.txt"), 31, 24)
-  8.times { animator.play }
 end
