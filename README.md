@@ -1,7 +1,8 @@
 # Vamp - necessities for the elegant vampire
 
 Want to pimp up your command line interface?
-Just require this gem insert some code and your CLI makes witty vampire quotes.
+Just require this gem, insert some code and your CLI makes witty vampire quotes.
+You can even play animated ascii art in a console window.
 
 ## Installation
 
@@ -64,7 +65,7 @@ animator = Vamp::Animator.new(File.join(Gem.loaded_specs["vamp"].gem_dir, "files
 animator.play
 ```
 
-To see the animation in higher resolution just klick on the following image.
+To see the animation in higher resolution just click on the following image.
 
 [![Animation Demo](https://raw.githubusercontent.com/m-31/vamp/data/pic/demo_001.gif)](https://raw.githubusercontent.com/m-31/vamp/data/pic/demo_001.mp4)
 
