@@ -54,11 +54,9 @@ CLI.start(ARGV)
 ```
 
 ## Animation
-<video width="320" height="240" controls>
-  <source src="http://www.w3schools.com/HTML/mov_bbb.mp4" type="video/mp4">
-  <source src="http://www.w3schools.com/HTML/mov_bbb.ogg" type="video/ogg">
-Your browser does not support the video tag.
-</video> 
+
+[![Animation Demo](https://raw.githubusercontent.com/m-31/vamp/data/pic/demo_001.gif)](https://raw.githubusercontent.com/m-31/vamp/data/pic/demo_001.mp4)
+[![Demo CountPages alpha](http://share.gifyoutube.com/KzB6Gb.gif)](https://www.youtube.com/watch?v=ek1j272iAmc)
 
 
 ## Development
