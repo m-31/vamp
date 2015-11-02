@@ -55,8 +55,9 @@ CLI.start(ARGV)
 
 ## Animation
 
+Klick on the animation to get a better movie:
+
 [![Animation Demo](https://raw.githubusercontent.com/m-31/vamp/data/pic/demo_001.gif)](https://raw.githubusercontent.com/m-31/vamp/data/pic/demo_001.mp4)
-[![Demo CountPages alpha](http://share.gifyoutube.com/KzB6Gb.gif)](https://www.youtube.com/watch?v=ek1j272iAmc)
 
 
 ## Development
