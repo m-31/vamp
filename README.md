@@ -19,10 +19,9 @@ Or install it yourself as:
 
     $ gem install vamp
 
-## Usage
+## Usage with thor
 
 ```ruby
-
 require "thor"
 require "vamp"
 
@@ -53,9 +52,19 @@ end
 CLI.start(ARGV)
 ```
 
-## Animation
+## Animation Usage
 
-Klick on the animation to get a better movie:
+You can play an ascii art animation within a terminal window by using vamp.
+
+```ruby
+require "vamp"
+
+animator = Vamp::Animator.new(File.join(Gem.loaded_specs["vamp"].gem_dir, "files", "vampire.txt"), 31, 0, 24,
+  "No man knows till he has suffered from the night how sweet and how dear to his heart and eye the morning can be.")
+animator.play
+```
+
+To see the animation in higher resolution just klick on the following image.
 
 [![Animation Demo](https://raw.githubusercontent.com/m-31/vamp/data/pic/demo_001.gif)](https://raw.githubusercontent.com/m-31/vamp/data/pic/demo_001.mp4)
 
