@@ -112,5 +112,24 @@ module Vamp
 [0m
     END
     LIZARD = remove_ansi(LIZARD_COLOR)
+
+    RUNNING = <<-'END'
+         _
+       _( }
+      /_  )
+      / "/
+     / -;\
+ ;--' ´  /'
+        <_
+    END
+    DECLARING = <<-'END'
+        ,
+     (}_/
+    /,;
+  "^/ \
+    \|/
+    //
+    ""`
+    END
   end
 end

@@ -45,4 +45,12 @@ describe Vamp::Art do
     expect(subject::DRAGON).not_to be nil
     puts "\n#{subject::DRAGON}"
   end
+  it "has a running man" do
+    expect(subject::RUNNING).not_to be nil
+    puts "\n#{subject::RUNNING}"
+  end
+  it "has a declaring woman" do
+    expect(subject::DECLARING).not_to be nil
+    puts "\n#{subject::DECLARING}"
+  end
 end
