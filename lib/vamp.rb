@@ -1,21 +1,13 @@
 require_relative "vamp/animator"
+require_relative "vamp/art"
 require_relative "vamp/colorize"
 require_relative "vamp/ply"
 require_relative "vamp/version"
 
 module Vamp
 
-  # ascii art vampire by the queen of ascii art: Joan Stark
-  #   https://en.wikipedia.org/wiki/Joan_Stark
-  VAMPIRE = <<-END
-        =/\\                 /\\=
-        / \\'._   (\\_/)   _.'/ \\
-       / .''._'--(o.o)--'_.''. \\
-      /.' _/ |`'=/ " \\='`| \\_ `.\\
-     /` .' `\\;-,'\\___/',-;/` '. '\\
-    /.-' jgs   `\\(-V-)/`       `-.\\
-    `            "   "            `
-  END
+  # ascii art: vampire
+  VAMPIRE = Vamp::Art::VAMPIRE
 
   # return random quote
   def quote

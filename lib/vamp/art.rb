@@ -1,6 +1,19 @@
 module Vamp
   module Art
-    HOBOGLOBIN_COL = <<'END'
+
+    # ascii art by the queen of ascii art: Joan Stark (jgs)
+    # https://en.wikipedia.org/wiki/Joan_Stark
+    VAMPIRE = <<-END
+        =/\\                 /\\=
+        / \\'._   (\\_/)   _.'/ \\
+       / .''._'--(o.o)--'_.''. \\
+      /.' _/ |`'=/ " \\='`| \\_ `.\\
+     /` .' `\\;-,'\\___/',-;/` '. '\\
+    /.-' jgs   `\\(-V-)/`       `-.\\
+    `            "   "            `
+    END
+
+    HOBOGLOBIN_COLOR = <<'END'
 [1;33;48m            ,     _.._     ,
            (`._."`    `"._.')
             '._          _.'               /\
@@ -25,7 +38,10 @@ module Vamp
 [0m
 END
 
-    SCULL_COL = <<'END'
+    # ascii art by Daniel Au (dcau)
+    # http://www.oocities.org/SoHo/7373/dcau.htm
+
+    SCULL_COLOR = <<'END'
 [1;31;48m             _,.-------.,_
          ,;~'             '~;,
        ,;                     ;,
