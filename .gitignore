@@ -2,6 +2,7 @@
 /.idea/
 /.yardoc
 /Gemfile.lock
+/*.gem
 /_yardoc/
 /coverage/
 /doc/
