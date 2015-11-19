@@ -3,6 +3,7 @@ require_relative "vamp/art"
 require_relative "vamp/colorize"
 require_relative "vamp/ply"
 require_relative "vamp/version"
+require_relative "vamp/graphic"
 
 module Vamp
 

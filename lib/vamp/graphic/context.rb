@@ -16,61 +16,10 @@ module Vamp
         @dotter = dotter
       end
 
-      # Bresenham's line algorithm
-      def line(x0, y0, x1, y1)
-        dx = (x1 - x0).abs
-        sx = x0 < x1 ? 1 : -1
-        dy = -(y1 - y0).abs
-        sy = y0 < y1 ? 1 : -1
-        err = dx + dy
-        while true
-          dot(x0, y0)
-          break if x0 == x1 && y0 == y1
-          e2 = 2 * err
-          if e2 > dy
-            err += dy
-            x0 += sx;
-          end
-          if e2 < dx
-            err += dx
-            y0 += sy;
-          end
-        end
-      end
-
-      # clipping area constants
-      INSIDE  = 0; # 0000
-      LEFT    = 1; # 0001
-      RIGHT   = 2; # 0010
-      BOTTOM  = 4; # 0100
-      TOP     = 8; # 1000
-
-      # Compute the bit code for a point (x, y) using the clip rectangle
-      # bounded diagonally by (xmin, ymin), and (xmax, ymax)
-      def compute_out_code(x, y)
-        xmin = 0
-        ymin = 0
-        xmax = width - 1
-        ymax = height - 1
-        code = INSIDE    # initialised as being inside of clip window
-
-        if x < xmin      # to the left of clip window
-		      code |= LEFT
-	      elsif x > xmax   # to the right of clip window
-          code |= RIGHT
-        end
-        if y < ymin      # below the clip window
-		      code |= BOTTOM
-	      elsif y > ymax   # above the clip window
-          code |= TOP
-        end
-        code
-      end
-
       # Cohen–Sutherland clipping algorithm clips a line from
       # P0 = (x0, y0) to P1 = (x1, y1) against a rectangle with
       # diagonal from (xmin, ymin) to (xmax, ymax).
-      def draw(x0, y0, x1, y1)
+      def line(x0, y0, x1, y1)
         xmin = 0
         ymin = 0
         xmax = width - 1
@@ -99,16 +48,16 @@ module Vamp
             # Now find the intersection point;
             # use formulas y = y0 + slope * (x - x0), x = x0 + (1 / slope) * (y - y0)
             if 0 != (outcodeOut & TOP)            # point is above the clip rectangle
-              x = x0 + (x1 - x0) * (ymax - y0) / (y1 - y0)
-              y = ymax;
+              x = x0.to_f + (x1 - x0) * (ymax - y0).to_f / (y1 - y0)
+              y = ymax
             elsif (0 != outcodeOut & BOTTOM)      # point is below the clip rectangle
-              x = x0 + (x1 - x0) * (ymin - y0) / (y1 - y0)
+              x = x0.to_f + (x1 - x0) * (ymin - y0).to_f / (y1 - y0)
               y = ymin
             elsif (0 != outcodeOut & RIGHT)       # point is to the right of clip rectangle
-              y = y0 + (y1 - y0) * (xmax - x0) / (x1 - x0)
-              x = xmax;
+              y = y0.to_f + (y1 - y0) * (xmax - x0).to_f / (x1 - x0)
+              x = xmax
             elsif (0 != outcodeOut & LEFT)        # point is to the left of clip rectangle
-              y = y0. + (y1 - y0) * (xmin - x0) / (x1 - x0)
+              y = y0.to_f + (y1 - y0) * (xmin - x0).to_f / (x1 - x0)
               x = xmin
             end
 
@@ -126,8 +75,63 @@ module Vamp
           end
         end
         if accept
-          line x0, y0, x1, y1
+          draw_line_direct x0.to_i, y0.to_i, x1.to_i, y1.to_i
         end
+        self
+      end
+
+      protected
+
+      # Bresenham's line algorithm
+      def draw_line_direct(x0, y0, x1, y1)
+        dx = (x1 - x0).abs
+        sx = x0 < x1 ? 1 : -1
+        dy = -(y1 - y0).abs
+        sy = y0 < y1 ? 1 : -1
+        err = dx + dy
+        while true
+          dot(x0, y0)
+          break if x0 == x1 && y0 == y1
+          e2 = 2 * err
+          if e2 > dy
+            err += dy
+            x0 += sx
+          end
+          if e2 < dx
+            err += dx
+            y0 += sy
+          end
+        end
+        self
+      end
+
+      # clipping area constants
+      INSIDE  = 0; # 0000
+      LEFT    = 1; # 0001
+      RIGHT   = 2; # 0010
+      BOTTOM  = 4; # 0100
+      TOP     = 8; # 1000
+
+      # Compute the bit code for a point (x, y) using the clip rectangle
+      # bounded diagonally by (xmin, ymin), and (xmax, ymax)
+      def compute_out_code(x, y)
+        xmin = 0
+        ymin = 0
+        xmax = width - 1
+        ymax = height - 1
+        code = INSIDE    # initialised as being inside of clip window
+
+        if x < xmin      # to the left of clip window
+          code |= LEFT
+        elsif x > xmax   # to the right of clip window
+          code |= RIGHT
+        end
+        if y < ymin      # below the clip window
+          code |= BOTTOM
+        elsif y > ymax   # above the clip window
+          code |= TOP
+        end
+        code
       end
     end
   end

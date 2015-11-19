@@ -15,15 +15,18 @@ module Vamp
       # put dot at x, ys
       def dot(x, y)
         check(x, y)
+        self
       end
 
       # remove dot at x, y
       def undot(x, y)
         check(x, y)
+        self
       end
 
       # clear screen of all dots
       def clear
+        self
       end
 
       # return complete screen as string representation

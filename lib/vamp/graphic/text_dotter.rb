@@ -7,15 +7,18 @@ module Vamp
       def dot(x, y)
         super
         @data[y][x] = "X"
+        self
       end
 
       def undot(x, y)
         super
         @data[y][x] = " "
+        self
       end
 
       def clear
         @data = Array.new(height) { Array.new(width, " ") }
+        self
       end
 
       def screen
