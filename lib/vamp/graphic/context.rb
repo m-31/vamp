@@ -75,7 +75,7 @@ module Vamp
           end
         end
         if accept
-          draw_line_direct x0.to_i, y0.to_i, x1.to_i, y1.to_i
+          draw_line_direct (x0 + 0.5).to_i, (y0 + 0.5).to_i, (x1 + 0.5).to_i, (y1 + 0.5).to_i
         end
         self
       end

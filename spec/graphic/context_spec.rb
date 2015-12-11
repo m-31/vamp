@@ -93,8 +93,8 @@ describe Vamp::Graphic::Context do
           subject.line 0.1, 0.1, 1.9, 1.4
           expect(subject.screen).to eq <<-'END'
 +--+
-|XX|
-|  |
+|X |
+| X|
 +--+
           END
         end
@@ -129,11 +129,11 @@ describe Vamp::Graphic::Context do
           END
         end
 
-        it "can draw top left to right top" do
+        it "can draw top left to right down" do
           subject.line 0.9999, 0.1, 1.9999, 1.9999999
           expect(subject.screen).to eq <<-'END'
 +--+
-|XX|
+| X|
 |  |
 +--+
           END
