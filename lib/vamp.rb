@@ -62,7 +62,8 @@ module Vamp
       "Only those prepared to die will find eternal life.",
       "I remember everything. It's a burden.",
       "I am teaching you something you don't want to know.",
-      "Death is not the worst. There are things more horrible than death."
+      "Death is not the worst. There are things more horrible than death.",
+      "I'll protect you from the hooded claw; Keep the vampires from your door."
     ].sample
   end
 end
