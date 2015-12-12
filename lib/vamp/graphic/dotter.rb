@@ -18,6 +18,11 @@ module Vamp
         self
       end
 
+      # is there a dot at x, y
+      def dot?(x, y)
+        check(x, y)
+      end
+
       # remove dot at x, y
       def undot(x, y)
         check(x, y)
@@ -31,6 +36,11 @@ module Vamp
 
       # return complete screen as string representation
       def screen
+      end
+
+      # check if (x, y) is on the screen
+      def in?(x, y)
+        (0...width)  === x && (0...height) === y
       end
 
       # check if (x, y) is on the screen, fails if not

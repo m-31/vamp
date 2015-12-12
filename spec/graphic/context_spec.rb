@@ -166,7 +166,7 @@ describe Vamp::Graphic::Context do
     end
   end
 
-  describe "screen 5x4" do
+  describe "screen 9x4" do
     subject { described_class.new(Vamp::Graphic::TextDotter.new(9, 4)) }
     describe "#new" do
       it "has empty screen" do

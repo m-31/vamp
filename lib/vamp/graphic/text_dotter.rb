@@ -10,6 +10,11 @@ module Vamp
         self
       end
 
+      def dot?(x, y)
+        super
+        @data[y][x] == "X"
+      end
+
       def undot(x, y)
         super
         @data[y][x] = " "

@@ -1,6 +1,7 @@
 require "forwardable"
 require_relative "dotter"
 require_relative "text_dotter"
+require_relative "transfer"
 
 module Vamp
   module Graphic
@@ -8,7 +9,7 @@ module Vamp
     class Context
       extend Forwardable
 
-      def_delegators :@dotter, :dot, :undot, :clear, :screen, :width, :height
+      def_delegators :@dotter, :dot, :dot?, :undot, :in?, :clear, :screen, :width, :height
 
       attr_reader :dotter       # can set a dot within [0, width] [0, height[]]
 
