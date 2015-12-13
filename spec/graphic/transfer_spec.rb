@@ -1,7 +1,7 @@
 require "spec_helper"
 
 describe Vamp::Graphic::Transfer do
-  describe "screen 36x36" do
+  describe "screen 9x9" do
     subject do
       s = described_class.new(Vamp::Graphic::Context.new(Vamp::Graphic::TextDotter.new(9, 9)))
       s.context.draw_line_direct 0, 0, 8, 8
@@ -24,6 +24,16 @@ describe Vamp::Graphic::Transfer do
       END
     end
 
+    it "has correct minus pattern" do
+      expect(subject.mapping["-"].screen).to eq <<-'END'
++---+
+|   |
+|XX |
+|   |
++---+
+      END
+    end
+
     it "gets top left pattern correct" do
       expect(subject.get_pattern(0, 0).screen).to eq <<-'END'
 +---+
@@ -37,9 +47,9 @@ describe Vamp::Graphic::Transfer do
     it "gets top left + 1x pattern correct" do
       expect(subject.get_pattern(1, 0).screen).to eq <<-'END'
 +---+
-| X |
-|  X|
 |   |
+|X  |
+| X |
 +---+
       END
     end
@@ -47,8 +57,38 @@ describe Vamp::Graphic::Transfer do
     it "gets top left + 1y pattern correct" do
       expect(subject.get_pattern(0, 1).screen).to eq <<-'END'
 +---+
+| X |
+|  X|
+|   |
++---+
+      END
+    end
+
+    it "gets empty pattern correct" do
+      expect(subject.get_pattern(4, 1).screen).to eq <<-'END'
++---+
+|   |
+|   |
+|   |
++---+
+      END
+    end
+
+    it "gets nearly empty pattern correct" do
+      expect(subject.get_pattern(4, 2).screen).to eq <<-'END'
++---+
+|   |
 |   |
 |X  |
++---+
+      END
+    end
+
+    it "gets down right pattern correct" do
+      expect(subject.get_pattern(6, 5).screen).to eq <<-'END'
++---+
+|  X|
+|XX |
 | X |
 +---+
       END

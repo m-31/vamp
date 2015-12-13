@@ -2,7 +2,7 @@ require_relative "dotter"
 
 module Vamp
   module Graphic
-    # simple sample implementation for a graphic basis implementation
+    # simple sample implementation for a graphic basic implementation
     class TextDotter < Dotter
       def dot(x, y)
         super

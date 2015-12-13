@@ -73,8 +73,8 @@ XXX
 
       def get_pattern(x, y)
         pattern = ""
-        char_width.times do |dx|
-          char_height.times do |dy|
+        char_height.times do |dy|
+          char_width.times do |dx|
             next unless context.in?(x + dx, y + dy)
             pattern += (context.dot?(x + dx, y + dy) ? "X" : "_")
           end
