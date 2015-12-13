@@ -32,6 +32,12 @@ XX_
 ___
       END
 
+      LINE = <<-'END'
+___
+___
+XXX
+      END
+
       def initialize(context)
         @context = context
         @char_width = 3
@@ -41,6 +47,7 @@ ___
             "\\" => create_char(BACKSLASH),
             "|"  => create_char(PIPE),
             "-"  => create_char(MINUS),
+            "_"  => create_char(LINE),
         }
       end
 
@@ -73,7 +80,7 @@ ___
           end
           pattern += "\n"
         end
-        pattern.strip
+        create_char(pattern.strip)
       end
 
       def difference(pattern1, pattern2)
@@ -84,6 +91,13 @@ ___
           end
         end
         m
+      end
+
+      def get_matching(pattern)
+        mapping.each do |k, v|
+          r = difference(pattern, maping[v])
+          puts r
+        end
       end
     end
   end
