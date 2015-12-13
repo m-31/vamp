@@ -99,7 +99,6 @@ describe Vamp::Graphic::Transfer do
     end
 
     describe "#get_matching" do
-
       it "gets pipe pattern correctly" do
         p = subject.create_pattern(<<-'END'
 _X_
@@ -108,6 +107,12 @@ _X_
         END
         )
         expect(subject.get_matching(p)).to eq "|"
+      end
+
+      it "gets correct ascii" do
+        expect(subject.ascii).to eq "\\  \n" \
+                                    " \\ \n" \
+                                    " /\\"
       end
     end
   end

@@ -8,6 +8,12 @@ module Vamp
       attr_reader :context
       attr_reader :mapping
 
+      SPACE = <<-'END'
+___
+___
+___
+      END
+
       SLASH = <<-'END'
 __X
 _X_
@@ -43,6 +49,7 @@ XXX
         @char_width = 3
         @char_height = 3
         @mapping = {
+            " "  => create_pattern(SPACE),
             "/"  => create_pattern(SLASH),
             "\\" => create_pattern(BACKSLASH),
             "|"  => create_pattern(PIPE),
@@ -100,6 +107,18 @@ XXX
           ranking[k] = r
         end
         ranking.min_by{|k, v| v}[0]
+      end
+
+
+      def ascii
+        a = ""
+        (context.height / char_height).times do |y|
+          (context.width / char_width).times do |x|
+            a += get_matching(get_pattern(x * char_width, y * char_height))
+          end
+          a += "\n"
+        end
+        a.chomp
       end
     end
   end
