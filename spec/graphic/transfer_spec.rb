@@ -20,6 +20,8 @@ describe Vamp::Graphic::Transfer do
 +---------+
         END
         puts "\n\n" + subject.get_pattern(1, 0) + "\n\n"
+        require "pp"
+        pp subject.mapping
         # puts subject::SLASH
         # puts subject.create_char(subject::SLASH)
       end

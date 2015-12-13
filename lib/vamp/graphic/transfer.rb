@@ -6,6 +6,7 @@ module Vamp
       attr_reader :char_width
       attr_reader :char_height
       attr_reader :context
+      attr_reader :mapping
 
       SLASH = <<-'END'
 __X
@@ -31,18 +32,16 @@ XX_
 ___
       END
 
-      MAPPING = {
-        "/"  => SLASH,
-        "\\" => BACKSLASH,
-        "|"  => PIPE,
-        "-"  => MINUS
-      }
-
       def initialize(context)
         @context = context
         @char_width = 3
         @char_height = 3
-        MAPPING.each { |_, v| check_pattern(v) }
+        @mapping = {
+            "/"  => create_char(SLASH),
+            "\\" => create_char(BACKSLASH),
+            "|"  => create_char(PIPE),
+            "-"  => create_char(MINUS),
+        }
       end
 
       def check_pattern(pattern)
@@ -59,7 +58,7 @@ ___
         a = check_pattern(pattern)
         char_height.times do |y|
           char_width.times do |x|
-            char.dot(x, y) if a[x] == "X"
+            char.dot(x, y) if a[y][x] == "X"
           end
         end
         char
@@ -81,9 +80,10 @@ ___
         m = 0
         char_width.times do |dx|
           char_height.times do |dy|
-
+            m += 1 if pattern1.dot?(dx, dy) != pattern2.dot?(dx, dy)
           end
         end
+        m
       end
     end
   end
