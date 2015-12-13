@@ -43,15 +43,15 @@ XXX
         @char_width = 3
         @char_height = 3
         @mapping = {
-            "/"  => create_char(SLASH),
-            "\\" => create_char(BACKSLASH),
-            "|"  => create_char(PIPE),
-            "-"  => create_char(MINUS),
-            "_"  => create_char(LINE),
+            "/"  => create_pattern(SLASH),
+            "\\" => create_pattern(BACKSLASH),
+            "|"  => create_pattern(PIPE),
+            "-"  => create_pattern(MINUS),
+            "_"  => create_pattern(LINE),
         }
       end
 
-      def check_pattern(pattern)
+      def create_data(pattern)
         a = pattern.split("\n")
         fail "pattern has wrong height" if a.size != char_height
         char_height.times do |dy|
@@ -60,9 +60,9 @@ XXX
         a
       end
 
-      def create_char(pattern)
+      def create_pattern(pattern)
         char = TextDotter.new(char_width, char_height)
-        a = check_pattern(pattern)
+        a = create_data(pattern)
         char_height.times do |y|
           char_width.times do |x|
             char.dot(x, y) if a[y][x] == "X"
@@ -80,7 +80,7 @@ XXX
           end
           pattern += "\n"
         end
-        create_char(pattern.strip)
+        create_pattern(pattern.strip)
       end
 
       def difference(pattern1, pattern2)
@@ -94,10 +94,12 @@ XXX
       end
 
       def get_matching(pattern)
+        ranking = {}
         mapping.each do |k, v|
-          r = difference(pattern, maping[v])
-          puts r
+          r = difference(pattern, v)
+          ranking[k] = r
         end
+        ranking.min_by{|k, v| v}[0]
       end
     end
   end

@@ -24,74 +24,91 @@ describe Vamp::Graphic::Transfer do
       END
     end
 
-    it "has correct minus pattern" do
-      expect(subject.mapping["-"].screen).to eq <<-'END'
+    describe "#mappping" do
+      it "has correct minus pattern" do
+        expect(subject.mapping["-"].screen).to eq <<-'END'
 +---+
 |   |
 |XX |
 |   |
 +---+
-      END
+        END
+      end
     end
 
-    it "gets top left pattern correct" do
-      expect(subject.get_pattern(0, 0).screen).to eq <<-'END'
+    describe "#get_pattern" do
+      it "gets top left pattern correct" do
+        expect(subject.get_pattern(0, 0).screen).to eq <<-'END'
 +---+
 |X  |
 | X |
 |  X|
 +---+
-      END
-    end
+        END
+      end
 
-    it "gets top left + 1x pattern correct" do
-      expect(subject.get_pattern(1, 0).screen).to eq <<-'END'
+      it "gets top left + 1x pattern correct" do
+        expect(subject.get_pattern(1, 0).screen).to eq <<-'END'
 +---+
 |   |
 |X  |
 | X |
 +---+
-      END
-    end
+        END
+      end
 
-    it "gets top left + 1y pattern correct" do
-      expect(subject.get_pattern(0, 1).screen).to eq <<-'END'
+      it "gets top left + 1y pattern correct" do
+        expect(subject.get_pattern(0, 1).screen).to eq <<-'END'
 +---+
 | X |
 |  X|
 |   |
 +---+
-      END
-    end
+        END
+      end
 
-    it "gets empty pattern correct" do
-      expect(subject.get_pattern(4, 1).screen).to eq <<-'END'
+      it "gets empty pattern correct" do
+        expect(subject.get_pattern(4, 1).screen).to eq <<-'END'
 +---+
 |   |
 |   |
 |   |
 +---+
-      END
-    end
+        END
+      end
 
-    it "gets nearly empty pattern correct" do
-      expect(subject.get_pattern(4, 2).screen).to eq <<-'END'
+      it "gets nearly empty pattern correct" do
+        expect(subject.get_pattern(4, 2).screen).to eq <<-'END'
 +---+
 |   |
 |   |
 |X  |
 +---+
-      END
-    end
+        END
+      end
 
-    it "gets down right pattern correct" do
-      expect(subject.get_pattern(6, 5).screen).to eq <<-'END'
+      it "gets down right pattern correct" do
+        expect(subject.get_pattern(6, 5).screen).to eq <<-'END'
 +---+
 |  X|
 |XX |
 | X |
 +---+
-      END
+        END
+      end
+    end
+
+    describe "#get_matching" do
+
+      it "gets pipe pattern correctly" do
+        p = subject.create_pattern(<<-'END'
+_X_
+_X_
+_X_
+        END
+        )
+        expect(subject.get_matching(p)).to eq "|"
+      end
     end
   end
 end
