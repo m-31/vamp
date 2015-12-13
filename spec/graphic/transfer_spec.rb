@@ -5,6 +5,7 @@ describe Vamp::Graphic::Transfer do
     subject do
       s = described_class.new(Vamp::Graphic::Context.new(Vamp::Graphic::TextDotter.new(9, 9)))
       s.context.draw_line_direct 0, 0, 8, 8
+      s.context.draw_line_direct 2, 8, 8, 5
       s
     end
     it "has correct starting picture" do
@@ -15,10 +16,10 @@ describe Vamp::Graphic::Transfer do
 |  X      |
 |   X     |
 |    X    |
-|     X   |
-|      X  |
-|       X |
-|        X|
+|     X  X|
+|      XX |
+|    XX X |
+|  XX    X|
 +---------+
       END
     end
@@ -29,6 +30,26 @@ describe Vamp::Graphic::Transfer do
 |X  |
 | X |
 |  X|
++---+
+      END
+    end
+
+    it "gets top left + 1x pattern correct" do
+      expect(subject.get_pattern(1, 0).screen).to eq <<-'END'
++---+
+| X |
+|  X|
+|   |
++---+
+      END
+    end
+
+    it "gets top left + 1y pattern correct" do
+      expect(subject.get_pattern(0, 1).screen).to eq <<-'END'
++---+
+|   |
+|X  |
+| X |
 +---+
       END
     end
