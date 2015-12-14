@@ -30,7 +30,7 @@ describe Vamp::Graphic::Transfer do
         expect(subject.mapping["-"].screen).to eq <<-'END'
 +---+
 |   |
-|XX |
+|XXX|
 |   |
 +---+
         END
@@ -125,7 +125,7 @@ _X_
       s.context.line 43, 25,  0, 50
       s.context.line 43, 25, 86,  0
       s.context.line 0,  25, 43, 25
-      s.context.line 43, 25, 87, 25
+      s.context.line 43, 25, 86, 25
       s.context.line 43, 25, 43, 50
       s.context.line 43, 25, 43,  0
       s.context.line 21,  0, 43, 25

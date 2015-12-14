@@ -2,6 +2,7 @@ require "forwardable"
 require_relative "dotter"
 require_relative "text_dotter"
 require_relative "transfer"
+require_relative "transfer5"
 
 module Vamp
   module Graphic

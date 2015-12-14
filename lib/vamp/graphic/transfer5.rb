@@ -1,7 +1,7 @@
 module Vamp
   module Graphic
     # Transfer dotter data into ASCII
-    class Transfer
+    class Transfer5
 
       attr_reader :char_width
       attr_reader :char_height
@@ -9,81 +9,105 @@ module Vamp
       attr_reader :mapping
 
       SPACE = <<-'END'
-___
-___
-___
+_____
+_____
+_____
+_____
+_____
       END
 
       SLASH = <<-'END'
-__X
-_X_
-X__
+___X_
+__X__
+_X___
+X____
+_____
       END
 
       BACKSLASH = <<-'END'
-X__
-_X_
-__X
+X____
+_X___
+__X__
+___X_
+_____
       END
 
       BACKTICK = <<-'END'
-X__
-___
-___
+_X___
+_____
+_____
+_____
+_____
       END
 
       PIPE = <<-'END'
-_X_
-_X_
-_X_
+__X__
+__X__
+__X__
+__X__
+_____
       END
 
       MINUS = <<-'END'
-___
-XXX
-___
+_____
+_____
+XXXX_
+_____
+_____
       END
 
       UNDERSCORE = <<-'END'
-___
-___
-XXX
+_____
+_____
+_____
+_____
+XXXXX
       END
 
       FULLSTOP = <<-'END'
-___
-___
-_X_
+_____
+_____
+_____
+__X__
+_____
       END
 
       DOUBLEQUOTES = <<-'END'
-X_X
-___
-___
+_X_X_
+_____
+_____
+_____
+_____
       END
 
       SINGLEQUOTE = <<-'END'
-_X_
-___
-___
+__X__
+_____
+_____
+_____
+_____
       END
 
       STAR = <<-'END'
-_X_
-XXX
-_X_
+_____
+__X__
+_XXX_
+__X__
+_____
       END
 
       HASH = <<-'END'
-XXX
-XXX
-XXX
+_____
+_XXX_
+_XXX_
+_XXX_
+_____
       END
 
       def initialize(context)
         @context = context
-        @char_width = 3
-        @char_height = 3
+        @char_width = 5
+        @char_height = 5
         @mapping = {
             " "  => create_pattern(SPACE),
             "/"  => create_pattern(SLASH),
