@@ -23,6 +23,12 @@ X__
       BACKSLASH = <<-'END'
 X__
 _X_
+__X
+      END
+
+      BACKTICK = <<-'END'
+X__
+___
 ___
       END
 
@@ -38,10 +44,28 @@ XX_
 ___
       END
 
-      LINE = <<-'END'
+      UNDERSCORE = <<-'END'
 ___
 ___
 XXX
+      END
+
+      FULLSTOP = <<-'END'
+___
+___
+_X_
+      END
+
+      DOUBLEQUOTES = <<-'END'
+X_X
+___
+___
+      END
+
+      SINGLEQUOTE = <<-'END'
+_X_
+___
+___
       END
 
       def initialize(context)
@@ -52,9 +76,13 @@ XXX
             " "  => create_pattern(SPACE),
             "/"  => create_pattern(SLASH),
             "\\" => create_pattern(BACKSLASH),
+            "`"  => create_pattern(BACKTICK),
             "|"  => create_pattern(PIPE),
             "-"  => create_pattern(MINUS),
-            "_"  => create_pattern(LINE),
+            "_"  => create_pattern(UNDERSCORE),
+            "."  => create_pattern(FULLSTOP),
+            "\"" => create_pattern(DOUBLEQUOTES),
+            "'"  => create_pattern(SINGLEQUOTE),
         }
       end
 

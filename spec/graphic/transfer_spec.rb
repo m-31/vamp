@@ -6,12 +6,13 @@ describe Vamp::Graphic::Transfer do
       s = described_class.new(Vamp::Graphic::Context.new(Vamp::Graphic::TextDotter.new(9, 9)))
       s.context.draw_line_direct 0, 0, 8, 8
       s.context.draw_line_direct 2, 8, 8, 5
+      s.context.draw_line_direct 7, 0, 7, 0
       s
     end
     it "has correct starting picture" do
       expect(subject.context.screen).to eq <<-'END'
 +---------+
-|X        |
+|X      X |
 | X       |
 |  X      |
 |   X     |
@@ -110,7 +111,7 @@ _X_
       end
 
       it "gets correct ascii" do
-        expect(subject.ascii).to eq "\\  \n" \
+        expect(subject.ascii).to eq "\\ '\n" \
                                     " \\ \n" \
                                     " /\\"
       end
