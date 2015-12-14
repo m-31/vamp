@@ -129,9 +129,9 @@ _X_
       s.context.line 43, 25, 43, 50
       s.context.line 43, 25, 43,  0
       s.context.line 21,  0, 43, 25
-      s.context.line 64,  0, 43, 25
+      s.context.line 65,  0, 43, 25
       s.context.line 21, 50, 43, 25
-      s.context.line 64, 50, 43, 25
+      s.context.line 65, 50, 43, 25
       s.context.line 0,  13, 43, 25
       s.context.line 86, 13, 43, 25
       s.context.line 0,  37, 43, 25
@@ -141,28 +141,28 @@ _X_
     it "has correct starting picture" do
       expect(subject.context.screen).to eq <<-'END'
 +---------------------------------------------------------------------------------------+
-|X                    X                     X                    X                     X|
-| XX                   X                    X                   X                    XX |
-|   XX                  X                   X                  X                   XX   |
-|     XX                 X                  X                 X                  XX     |
+|X                    X                     X                     X                    X|
+| XX                   X                    X                    X                   XX |
+|   XX                  X                   X                   X                  XX   |
+|     XX                 X                  X                  X                 XX     |
 |       X                 X                 X                 X                 X       |
-|        XX               X                 X                X                XX        |
-|          XX              X                X               X               XX          |
-|            X              X               X              X               X            |
-|             XX             X              X             X              XX             |
-|               XX            X             X            X             XX               |
+|        XX               X                 X                 X               XX        |
+|          XX              X                X                X              XX          |
+|            X              X               X               X              X            |
+|             XX             X              X              X             XX             |
+|               XX            X             X             X            XX               |
 |                 XX           X            X            X           XX                 |
 |                   X           X           X           X           X                   |
 |                    XX          X          X          X          XX                    |
-|XX                    XX        X          X         X         XX                    XX|
-|  XXXX                  X        X         X        X         X                  XXXX  |
-|      XXX                XX       X        X       X        XX                XXX      |
+|XX                    XX        X          X          X        XX                    XX|
+|  XXXX                  X        X         X         X        X                  XXXX  |
+|      XXX                XX       X        X        X       XX                XXX      |
 |         XXXX              XX      X       X       X      XX              XXXX         |
 |             XXXX            XX     X      X      X     XX            XXXX             |
 |                 XXX           X     X     X     X     X           XXX                 |
 |                    XXXX        XX    X    X    X    XX        XXXX                    |
 |                        XXX       XX   X   X   X   XX       XXX                        |
-|                           XXXX     X  X   X  X   X     XXXX                           |
+|                           XXXX     X  X   X   X  X     XXXX                           |
 |                               XXXX  XX X  X  X XX  XXXX                               |
 |                                   XXX XXX X XXX XXX                                   |
 |                                      XXXXXXXXXXX                                      |
@@ -170,28 +170,28 @@ _X_
 |                                      XXXXXXXXXXX                                      |
 |                                   XXX XXX X XXX XXX                                   |
 |                               XXXX  XX X  X  X XX  XXXX                               |
-|                           XXXX     X  X   X  X   X     XXXX                           |
+|                           XXXX     X  X   X   X  X     XXXX                           |
 |                        XXX       XX   X   X   X   XX       XXX                        |
 |                    XXXX        XX    X    X    X    XX        XXXX                    |
 |                 XXX           X     X     X     X     X           XXX                 |
 |             XXXX            XX     X      X      X     XX            XXXX             |
 |         XXXX              XX      X       X       X      XX              XXXX         |
-|      XXX                XX       X        X       X        XX                XXX      |
-|  XXXX                  X        X         X        X         X                  XXXX  |
-|XX                    XX        X          X         X         XX                    XX|
+|      XXX                XX       X        X        X       XX                XXX      |
+|  XXXX                  X        X         X         X        X                  XXXX  |
+|XX                    XX        X          X          X        XX                    XX|
 |                    XX          X          X          X          XX                    |
 |                   X           X           X           X           X                   |
 |                 XX           X            X            X           XX                 |
-|               XX            X             X            X             XX               |
-|             XX             X              X             X              XX             |
-|            X              X               X              X               X            |
-|          XX              X                X               X               XX          |
-|        XX               X                 X                X                XX        |
+|               XX            X             X             X            XX               |
+|             XX             X              X              X             XX             |
+|            X              X               X               X              X            |
+|          XX              X                X                X              XX          |
+|        XX               X                 X                 X               XX        |
 |       X                 X                 X                 X                 X       |
-|     XX                 X                  X                 X                  XX     |
-|   XX                  X                   X                  X                   XX   |
-| XX                   X                    X                   X                    XX |
-|X                    X                     X                    X                     X|
+|     XX                 X                  X                  X                 XX     |
+|   XX                  X                   X                   X                  XX   |
+| XX                   X                    X                    X                   XX |
+|X                    X                     X                     X                    X|
 +---------------------------------------------------------------------------------------+
       END
     end
