@@ -117,4 +117,88 @@ _X_
       end
     end
   end
+  describe "screen 87x51" do
+    subject do
+      s = described_class.new(Vamp::Graphic::Context.new(Vamp::Graphic::TextDotter.new(87, 51)))
+      s.context.line 0,   0, 43, 25
+      s.context.line 43, 25, 86, 50
+      s.context.line 43, 25,  0, 50
+      s.context.line 43, 25, 86,  0
+      s.context.line 0,  25, 43, 25
+      s.context.line 43, 25, 87, 25
+      s.context.line 43, 25, 43, 50
+      s.context.line 43, 25, 43,  0
+      s.context.line 21,  0, 43, 25
+      s.context.line 64,  0, 43, 25
+      s.context.line 21, 50, 43, 25
+      s.context.line 64, 50, 43, 25
+      s.context.line 0,  13, 43, 25
+      s.context.line 86, 13, 43, 25
+      s.context.line 0,  37, 43, 25
+      s.context.line 86, 37, 43, 25
+      s
+    end
+    it "has correct starting picture" do
+      expect(subject.context.screen).to eq <<-'END'
++---------------------------------------------------------------------------------------+
+|X                    X                     X                    X                     X|
+| XX                   X                    X                   X                    XX |
+|   XX                  X                   X                  X                   XX   |
+|     XX                 X                  X                 X                  XX     |
+|       X                 X                 X                 X                 X       |
+|        XX               X                 X                X                XX        |
+|          XX              X                X               X               XX          |
+|            X              X               X              X               X            |
+|             XX             X              X             X              XX             |
+|               XX            X             X            X             XX               |
+|                 XX           X            X            X           XX                 |
+|                   X           X           X           X           X                   |
+|                    XX          X          X          X          XX                    |
+|XX                    XX        X          X         X         XX                    XX|
+|  XXXX                  X        X         X        X         X                  XXXX  |
+|      XXX                XX       X        X       X        XX                XXX      |
+|         XXXX              XX      X       X       X      XX              XXXX         |
+|             XXXX            XX     X      X      X     XX            XXXX             |
+|                 XXX           X     X     X     X     X           XXX                 |
+|                    XXXX        XX    X    X    X    XX        XXXX                    |
+|                        XXX       XX   X   X   X   XX       XXX                        |
+|                           XXXX     X  X   X  X   X     XXXX                           |
+|                               XXXX  XX X  X  X XX  XXXX                               |
+|                                   XXX XXX X XXX XXX                                   |
+|                                      XXXXXXXXXXX                                      |
+|XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX|
+|                                      XXXXXXXXXXX                                      |
+|                                   XXX XXX X XXX XXX                                   |
+|                               XXXX  XX X  X  X XX  XXXX                               |
+|                           XXXX     X  X   X  X   X     XXXX                           |
+|                        XXX       XX   X   X   X   XX       XXX                        |
+|                    XXXX        XX    X    X    X    XX        XXXX                    |
+|                 XXX           X     X     X     X     X           XXX                 |
+|             XXXX            XX     X      X      X     XX            XXXX             |
+|         XXXX              XX      X       X       X      XX              XXXX         |
+|      XXX                XX       X        X       X        XX                XXX      |
+|  XXXX                  X        X         X        X         X                  XXXX  |
+|XX                    XX        X          X         X         XX                    XX|
+|                    XX          X          X          X          XX                    |
+|                   X           X           X           X           X                   |
+|                 XX           X            X            X           XX                 |
+|               XX            X             X            X             XX               |
+|             XX             X              X             X              XX             |
+|            X              X               X              X               X            |
+|          XX              X                X               X               XX          |
+|        XX               X                 X                X                XX        |
+|       X                 X                 X                 X                 X       |
+|     XX                 X                  X                 X                  XX     |
+|   XX                  X                   X                  X                   XX   |
+| XX                   X                    X                   X                    XX |
+|X                    X                     X                    X                     X|
++---------------------------------------------------------------------------------------+
+      END
+    end
+    pending "gets correct ascii" do
+      expect(subject.ascii).to eq "\\ '\n" \
+                                    " \\ \n" \
+                                    " /\\"
+    end
+  end
 end
