@@ -124,8 +124,11 @@ XXX
         pattern = ""
         char_height.times do |dy|
           char_width.times do |dx|
-            next unless context.in?(x + dx, y + dy)
-            pattern += (context.dot?(x + dx, y + dy) ? "X" : "_")
+            if context.in?(x + dx, y + dy)
+              pattern += (context.dot?(x + dx, y + dy) ? "X" : "_")
+            else
+              pattern += "_"
+            end
           end
           pattern += "\n"
         end

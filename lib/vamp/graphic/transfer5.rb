@@ -148,8 +148,11 @@ _____
         pattern = ""
         char_height.times do |dy|
           char_width.times do |dx|
-            next unless context.in?(x + dx, y + dy)
-            pattern += (context.dot?(x + dx, y + dy) ? "X" : "_")
+            if context.in?(x + dx, y + dy)
+              pattern += (context.dot?(x + dx, y + dy) ? "X" : "_")
+            else
+              pattern += "_"
+            end
           end
           pattern += "\n"
         end
@@ -172,7 +175,8 @@ _____
           r = difference(pattern, v)
           ranking[k] = r
         end
-        ranking.min_by{|k, v| v}[0]
+        match = ranking.min_by{|k, v| v}
+        match[0..1]
       end
 
 
@@ -180,7 +184,20 @@ _____
         a = ""
         (context.height / char_height).times do |y|
           (context.width / char_width).times do |x|
-            a += get_matching(get_pattern(x * char_width, y * char_height))
+            m = get_matching(get_pattern(x * char_width, y * char_height))
+            if (m[1] > 0)
+              n = []
+              n << get_matching(get_pattern(x * char_width + 1, y * char_height))
+              n << get_matching(get_pattern(x * char_width - 1, y * char_height))
+              n << get_matching(get_pattern(x * char_width, y * char_height + 1))
+              n << get_matching(get_pattern(x * char_width, y * char_height - 1))
+              n.each do |v|
+                if v[1] < m[1]
+                  m = v
+                end
+              end
+            end
+            a += m[0]
           end
           a += "\n"
         end
