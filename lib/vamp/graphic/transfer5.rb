@@ -169,13 +169,16 @@ _____
         m
       end
 
-      def get_matching(pattern)
+      def get_matching(pattern, without_blank = false)
         ranking = {}
         mapping.each do |k, v|
+          next if without_blank and v == " "
           r = difference(pattern, v)
           ranking[k] = r
         end
         match = ranking.min_by{|k, v| v}
+        # require "pp"
+        # pp match
         match[0..1]
       end
 
@@ -187,10 +190,16 @@ _____
             m = get_matching(get_pattern(x * char_width, y * char_height))
             if (m[1] > 0)
               n = []
-              n << get_matching(get_pattern(x * char_width + 1, y * char_height))
-              n << get_matching(get_pattern(x * char_width - 1, y * char_height))
-              n << get_matching(get_pattern(x * char_width, y * char_height + 1))
-              n << get_matching(get_pattern(x * char_width, y * char_height - 1))
+              n << get_matching(get_pattern(x * char_width + 1, y * char_height), true)
+              n << get_matching(get_pattern(x * char_width - 1, y * char_height), true)
+              n << get_matching(get_pattern(x * char_width, y * char_height + 1), true)
+              n << get_matching(get_pattern(x * char_width, y * char_height - 1), true)
+=begin
+              n << get_matching(get_pattern(x * char_width + 2, y * char_height), true)
+              n << get_matching(get_pattern(x * char_width - 2, y * char_height), true)
+              n << get_matching(get_pattern(x * char_width, y * char_height + 2), true)
+              n << get_matching(get_pattern(x * char_width, y * char_height - 2), true)
+=end
               n.each do |v|
                 if v[1] < m[1]
                   m = v

@@ -82,7 +82,7 @@ module Vamp
         self
       end
 
-      protected
+      # protected
 
       # Bresenham's line algorithm
       def draw_line_direct(x0, y0, x1, y1)
@@ -106,6 +106,8 @@ module Vamp
         end
         self
       end
+
+      private
 
       # clipping area constants
       INSIDE  = 0; # 0000

@@ -38,15 +38,142 @@ describe Vamp::Graphic::Transfer5 do
       s.context.line 144,  63,  72, 42
       s
     end
-    pending "has correct starting picture" do
+    it "has correct starting picture" do
       expect(subject.context.screen).to eq <<-'END'
-+---------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+|X                                   X                                   X                                   X                                   X|
+| XX                                  X                                  X                                  X                                  XX |
+|   XX                                 X                                 X                                 X                                 XX   |
+|     XX                                X                                X                                X                                 X     |
+|       X                               X                                X                                X                               XX      |
+|        XX                              X                               X                               X                              XX        |
+|          XX                             X                              X                              X                             XX          |
+|            X                             X                             X                             X                             X            |
+|             XX                            X                            X                            X                            XX             |
+|               XX                           X                           X                           X                           XX               |
+|                 XX                          X                          X                          X                           X                 |
+|                   X                         X                          X                          X                         XX                  |
+|                    XX                        X                         X                         X                        XX                    |
+|                      XX                       X                        X                        X                       XX                      |
+|                        X                       X                       X                       X                       X                        |
+|                         XX                      X                      X                      X                      XX                         |
+|                           XX                     X                     X                     X                     XX                           |
+|                             XX                    X                    X                    X                     X                             |
+|                               X                   X                    X                    X                   XX                              |
+|                                XX                  X                   X                   X                  XX                                |
+|                                  XX                 X                  X                  X                 XX                                  |
+|XX                                  X                 X                 X                 X                 X                                  XX|
+|  XXXX                               XX                X                X                X                XX                               XXXX  |
+|      XXX                              XX               X               X               X               XX                              XXX      |
+|         XXXX                            XX              X              X              X               X                            XXXX         |
+|             XXX                           X             X              X              X             XX                          XXX             |
+|                XXX                         XX            X             X             X            XX                         XXX                |
+|                   XXXX                       XX           X            X            X           XX                       XXXX                   |
+|                       XXX                      X           X           X           X           X                      XXX                       |
+|                          XXXX                   XX          X          X          X          XX                   XXXX                          |
+|                              XXX                  XX         X         X         X         XX                  XXX                              |
+|                                 XXXX                XX        X        X        X         X                XXXX                                 |
+|                                     XXX               X       X        X        X       XX              XXX                                     |
+|                                        XXX             XX      X       X       X      XX             XXX                                        |
+|                                           XXXX           XX     X      X      X     XX           XXXX                                           |
+|                                               XXX          X     X     X     X     X          XXX                                               |
+|                                                  XXXX       XX    X    X    X    XX       XXXX                                                  |
+|                                                      XXX      XX   X   X   X   XX      XXX                                                      |
+|                                                         XXXX    XX  X  X  X   X    XXXX                                                         |
+|                                                             XXX   X X  X  X XX  XXX                                                             |
+|                                                                XXX XXX X XXX XXX                                                                |
+|                                                                   XXXXXXXXXXX                                                                   |
+|XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX|
+|                                                                   XXXXXXXXXXX                                                                   |
+|                                                                XXX XXX X XXX XXX                                                                |
+|                                                             XXX   X X  X  X XX  XXX                                                             |
+|                                                         XXXX    XX  X  X  X   X    XXXX                                                         |
+|                                                      XXX      XX   X   X   X   XX      XXX                                                      |
+|                                                  XXXX       XX    X    X    X    XX       XXXX                                                  |
+|                                               XXX          X     X     X     X     X          XXX                                               |
+|                                           XXXX           XX     X      X      X     XX           XXXX                                           |
+|                                        XXX             XX      X       X       X      XX             XXX                                        |
+|                                     XXX               X       X        X        X       XX              XXX                                     |
+|                                 XXXX                XX        X        X        X         X                XXXX                                 |
+|                              XXX                  XX         X         X         X         XX                  XXX                              |
+|                          XXXX                   XX          X          X          X          XX                   XXXX                          |
+|                       XXX                      X           X           X           X           X                      XXX                       |
+|                   XXXX                       XX           X            X            X           XX                       XXXX                   |
+|                XXX                         XX            X             X             X            XX                         XXX                |
+|             XXX                           X             X              X              X             XX                          XXX             |
+|         XXXX                            XX              X              X              X               X                            XXXX         |
+|      XXX                              XX               X               X               X               XX                              XXX      |
+|  XXXX                               XX                X                X                X                XX                               XXXX  |
+|XX                                  X                 X                 X                 X                 X                                  XX|
+|                                  XX                 X                  X                  X                 XX                                  |
+|                                XX                  X                   X                   X                  XX                                |
+|                               X                   X                    X                    X                   XX                              |
+|                             XX                    X                    X                    X                     X                             |
+|                           XX                     X                     X                     X                     XX                           |
+|                         XX                      X                      X                      X                      XX                         |
+|                        X                       X                       X                       X                       X                        |
+|                      XX                       X                        X                        X                       XX                      |
+|                    XX                        X                         X                         X                        XX                    |
+|                   X                         X                          X                          X                         XX                  |
+|                 XX                          X                          X                          X                           X                 |
+|               XX                           X                           X                           X                           XX               |
+|             XX                            X                            X                            X                            XX             |
+|            X                             X                             X                             X                             X            |
+|          XX                             X                              X                              X                             XX          |
+|        XX                              X                               X                               X                              XX        |
+|       X                               X                                X                                X                               XX      |
+|     XX                                X                                X                                X                                 X     |
+|   XX                                 X                                 X                                 X                                 XX   |
+| XX                                  X                                  X                                  X                                  XX |
+|X                                   X                                   X                                   X                                   X|
++-------------------------------------------------------------------------------------------------------------------------------------------------+
       END
     end
+    it "gets correct ascii" do
+      expect(subject.ascii.split("\n").map(&:rstrip).join("\n")).to eq (<<-'END'
+`      \      |      /      '
+  \     \     |     /     /
+    .    \    |         .`
+     '        |        `
+--     \      |   `  /     --
+   "-_   . '  |  / /`  _-"
+      "-_ ' ' | ' ` _-`
+          -- \|/ -"
+-------------###-------------
+          -- "|\ -_
+       -`` `  | \'  '-
+   --    /  ` |    \    --
+-"     /`  /  |  '   .     "-
+      `   `   |   '   '
+    '    /    |    \    `
+  /     /     |     \     \
+.`            |      \      .
+      END
+      ).chomp
+    end
+
+    # here is the 3 x 3 result
     pending "gets correct ascii" do
-      expect(subject.ascii).to eq "\\ '\n" \
-                                    " \\ \n" \
-                                    " /\\"
+      expect(subject.ascii.split("\n").map(&:rstrip).join("\n")).to eq (<<-'END'
+\_     \      |      /     _/
+  \     \     |     /     /`
+   '_    .    |    .`   _`
+     `.   .   |   .`  .'
+\_     \      |   `  /`    _/
+  "-__  '\ '  |  ' /`  __-"
+      `-_ '_' | '_' _-'`
+         "\\/\|////"
+-------------###-------------
+         _////|\/\\_
+      _-" .'.`| .`. "-_
+  _-'`  _/`.` |  . \_  '`-_
+/"     /`  `  |      \     "\
+     _'   '   |   '   '_
+   _'    '    |    '    `_
+  /`    /     |     \     \
+/`     /      |      \     '\
+      END
+      ).chomp
     end
   end
 end
