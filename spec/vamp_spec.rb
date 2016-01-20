@@ -1,4 +1,5 @@
 require "spec_helper"
+require "set"
 
 describe Vamp do
   it "has a version number" do

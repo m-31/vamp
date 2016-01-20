@@ -1,4 +1,5 @@
 require "spec_helper"
+require "vamp/graphic"
 
 describe Vamp::Graphic::Context do
   describe "screen 2x2" do
