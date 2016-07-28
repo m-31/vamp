@@ -62,7 +62,33 @@ module Vamp
       "I remember everything. It's a burden.",
       "I am teaching you something you don't want to know.",
       "Death is not the worst. There are things more horrible than death.",
-      "I'll protect you from the hooded claw; Keep the vampires from your door."
+      "I'll protect you from the hooded claw; Keep the vampires from your door.",
+      "It's about power and it's about women and you just hate those two words in the same sentence, don't you?",
+      "I saw you last night, and I see you working here today. You're not special; you're extraordinary.",
+      "What I want from you I can never have. You don't need me to take care of you anymore. So I'm gonna go.",
+      "This world is a vampire, she eats her kids, let's hide the bodies under the bridge.",
+      "Your mouth is open, sound is coming from it. This is never good.",
+      "It looks dead. It smells dead. Yet it's moving around. That's interesting.",
+      "Stop touching my magic bone!",
+      "She could be anywhere. Even here, right now, watching, listening to every word we say." \
+      " For all we know, she could be one of us.",
+      "We're hunted men, driven mad by forces beyond our understanding.",
+      "How can you tell me you understand what those vampires are feeling? You aren't a passion to them," \
+      " you are a snack! A willing, idiotic snack.",
+      "You want credit for not feeding on bleeding disaster victims?",
+      "So, what I'm wondering is, does this always happen? Sleep with a guy and he goes all evil?",
+      "I may be dead, but I'm still pretty. Which is more than I can say for you.",
+      "I'm going through some ... changes.",
+      "I'm gonna ask you something, and you gotta promise you'll be honest and not spare my feelings just 'cause" \
+      " I could kill you. You promise?",
+      "Are you nuts? Of course it's working! Observe my bitter ranting. Hear the shrill edge of hysteria in my voice.",
+      "Testosterone is a great equalizer. It turns all men into morons.",
+      "I've been alive a bit longer than you, and dead a lot longer than that. I've seen things you couldn't" \
+      " imagine, and done things I prefer you didn't. I don't exactly have a reputation for beeing a thinker." \
+      " I follow my blood, which doesn't exactly rush in the direction of my brain. So I make a lot of mistakes," \
+      " a lot of wrong bloody calls. A hundred plus years, and there's only one thing I've been sure of: you.",
+      "I have come to redefine the words pain and suffering since I fell in love with you.",
+      "It's officially nippy. So say my nips."
     ].sample
   end
 end
