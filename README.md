@@ -4,6 +4,7 @@ Want to pimp up your command line interface?
 Just require this gem, insert some code and your CLI makes witty vampire quotes.
 You can even play animated ascii art in a console window.
 
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -19,6 +20,7 @@ And then execute:
 Or install it yourself as:
 
     $ gem install vamp
+
 
 ## Usage with thor
 
