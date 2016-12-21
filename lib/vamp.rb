@@ -42,9 +42,9 @@ module Vamp
       "Some things aren't meant for sunlight. The only place for them is in the shadows.",
       "Is that all I was to you, a one-bite stand?",
       "Though I cannot predict the future, the consequences of this night will reverberate through the halls" \
-      " of both great covens for many years to come",
+      " of both great covens for many years to come.",
       "Whether you like it or not, you are in middle of a war that has been raging for the better part of a" \
-      " thousand years",
+      " thousand years.",
       "There is a good reason why these rules were created, and they are the only reason we have survived this long!",
       "First rule about vampires, don`t believe anything you read.",
       "Stupid, unreliable vampire.",
@@ -55,8 +55,8 @@ module Vamp
       "One thing vampire children are taught is, never run with a wooden stake.",
       "The unknown is now my reality, for I do not yet understand what I have become." \
       " The future brings so many questions, so many fears. But the first step, the first day, has arrived.",
-      "Please forgive me, but I desperately need your guidance. I apologise for breaking the Chain and awakening you" \
-      " a head of schedule, but I fear we may all be in grave danger.",
+      "Please forgive me, but I desperately need your guidance. I apologize for breaking the chain and awakening you" \
+      " ahead of schedule, but I fear we may all be in grave danger.",
       "I just feel like all the sand is at the bottom of the hour glass or something.",
       "Only those prepared to die will find eternal life.",
       "I remember everything. It's a burden.",
@@ -88,7 +88,13 @@ module Vamp
       " I follow my blood, which doesn't exactly rush in the direction of my brain. So I make a lot of mistakes," \
       " a lot of wrong bloody calls. A hundred plus years, and there's only one thing I've been sure of: you.",
       "I have come to redefine the words pain and suffering since I fell in love with you.",
-      "It's officially nippy. So say my nips."
+      "It's officially nippy. So say my nips.",
+      "What the hell is going on? What's happening to me?",
+      "You can never come here again. They'll kill you. Do you understand?",
+      "Incoherent thoughts and images, nothing more. Which is precisely why the Awakening is performed by an elder." \
+      " You do not possess the necessary skills. ",
+      "He comes in, he does his job and then he goes home. Other than that, I really don't know what to tell you.",
+      "In one night the lies that had united our kind had been exposed."
     ].sample
   end
 end
