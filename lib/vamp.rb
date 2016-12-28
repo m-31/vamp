@@ -1,8 +1,8 @@
-require_relative "vamp/animator"
-require_relative "vamp/art"
-require_relative "vamp/colorize"
-require_relative "vamp/ply"
-require_relative "vamp/version"
+require "vamp/animator"
+require "vamp/art"
+require "vamp/colorize"
+require "vamp/ply"
+require "vamp/version"
 
 module Vamp
 
