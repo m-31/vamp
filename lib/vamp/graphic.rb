@@ -1,4 +1,4 @@
-require_relative "graphic/context"
+require File.join(File.dirname(__FILE__), "graphic/context")
 
 module Vamp
   module Graphic
