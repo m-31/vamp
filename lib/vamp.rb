@@ -1,4 +1,4 @@
-require 'rubygem'        if RUBY_VERSION =~ /^1\.8\./
+require 'rubygems'       if RUBY_VERSION =~ /^1\.8\./
 require 'extensions/all' if RUBY_VERSION =~ /^1\.8\./
 require "vamp/animator"
 require "vamp/art"
