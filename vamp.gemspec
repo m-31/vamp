@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
   spec.post_install_message = "  .. may the blood never cease to flow .."
 
-  spec.required_ruby_version = '>= 1.8.7'
+  spec.required_ruby_version = '>= 1.9.0'
 
   spec.add_development_dependency "rake"
   spec.add_development_dependency "rspec"
