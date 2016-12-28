@@ -149,7 +149,7 @@ describe Vamp::Graphic::Transfer5 do
   /     /     |     \     \
 .`            |      \      .
       END
-      ).chomp
+      ).rstrip
     end
 
     # here is the 3 x 3 result
@@ -173,7 +173,7 @@ describe Vamp::Graphic::Transfer5 do
   /`    /     |     \     \
 /`     /      |      \     '\
       END
-      ).chomp
+      ).rstrip
     end
   end
 end
