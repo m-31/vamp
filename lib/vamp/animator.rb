@@ -1,4 +1,4 @@
-require_relative "colorize"
+require File.join(File.dirname(__FILE__), "colorize")
 
 module Vamp
   # play animation on console
