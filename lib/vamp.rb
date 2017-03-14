@@ -94,7 +94,8 @@ module Vamp
       "Incoherent thoughts and images, nothing more. Which is precisely why the Awakening is performed by an elder." \
       " You do not possess the necessary skills. ",
       "He comes in, he does his job and then he goes home. Other than that, I really don't know what to tell you.",
-      "In one night the lies that had united our kind had been exposed."
+      "In one night the lies that had united our kind had been exposed.",
+      "Chaos and infighting are inevitable. All that is certain is that Darkness is still ahead. But for now, for the first time, I look into the light with new hope."
     ].sample
   end
 end
