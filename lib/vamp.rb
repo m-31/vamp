@@ -95,7 +95,14 @@ module Vamp
       " You do not possess the necessary skills. ",
       "He comes in, he does his job and then he goes home. Other than that, I really don't know what to tell you.",
       "In one night the lies that had united our kind had been exposed.",
-      "Chaos and infighting are inevitable. All that is certain is that Darkness is still ahead. But for now, for the first time, I look into the light with new hope."
+      "Chaos and infighting are inevitable. All that is certain is that Darkness is still ahead. But for now," \
+      " for the first time, I look into the light with new hope.",
+      "The moon is my sun, the night is my day, Blood is my life, and you are my prey.",
+      "I don't live in darkness; Darkness lives in me.",
+      "In the end, we are alone. And there is nothing but the cold, dark wasteland of eternity.",
+      "Darling, you're already in my veins.",
+      "I'm an energy vampire. I just suck off everybody's energy. But I give it back.",
+      "I’m the thing that monsters have nightmares about."
     ].sample
   end
 end
