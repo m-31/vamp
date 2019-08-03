@@ -102,7 +102,7 @@ module Vamp
       "In the end, we are alone. And there is nothing but the cold, dark wasteland of eternity.",
       "Darling, you're already in my veins.",
       "I'm an energy vampire. I just suck off everybody's energy. But I give it back.",
-      "I’m the thing that monsters have nightmares about."
+      "I'm the thing that monsters have nightmares about."
     ].sample
   end
 end
