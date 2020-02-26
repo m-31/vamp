@@ -22,7 +22,7 @@ module Vamp
       "You're still waiting for the running and the screaming, aren't you?",
       "Your number was up the first time I met you.",
       "You really should stay away from me.",
-      "Thats the beautiful thing about being human: Things change.",
+      "That's the beautiful thing about being human: Things change.",
       "I've never tried to keep a specific person alive before, and it's much more troublesome" \
       " than I would have believed.",
       "Hasn't anyone ever told you? Life isn't fair.",
@@ -102,7 +102,12 @@ module Vamp
       "In the end, we are alone. And there is nothing but the cold, dark wasteland of eternity.",
       "Darling, you're already in my veins.",
       "I'm an energy vampire. I just suck off everybody's energy. But I give it back.",
-      "I'm the thing that monsters have nightmares about."
+      "I'm the thing that monsters have nightmares about.",
+      "We enjoy the night, the darkness, where we can do things that aren't acceptable in the light. Night is when" \
+      " we slake our thirst.",
+      "Vampires pretending to be humans pretending to be vampires ... How avant-garde!",
+      "I was shaking all over, and it wasn't from the vampire. Memories have teeth, too.",
+      "I always thought the appeal for vampires are the same as religion, the desire to avoid death and live forever."
     ].sample
   end
 end
