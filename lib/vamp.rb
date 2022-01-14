@@ -107,7 +107,16 @@ module Vamp
       " we slake our thirst.",
       "Vampires pretending to be humans pretending to be vampires ... How avant-garde!",
       "I was shaking all over, and it wasn't from the vampire. Memories have teeth, too.",
-      "I always thought the appeal for vampires are the same as religion, the desire to avoid death and live forever."
+      "I always thought the appeal for vampires are the same as religion, the desire to avoid death and live forever.",
+      "When other little girls wanted to be ballet dancers I kind of wanted to be a vampire.",
+      "I took mythology a lot more seriously since I’d become a vampire.",
+      "Vampires pretending to be humans pretending to be vampires ... How avant-garde!",
+      "If there's one thing real vampires seem to have in common, it is their reluctance to tell the world about who," \
+      " and what, they are.",
+      "I'm going out to get a bite to drink.",
+      "Loving the monsters always ends badly for the humans. It's a rule.",
+      "Living somewhat apart from human society, vampires are not burdened with the conventions of heterosexual or" \
+      " homosexual. We admire physical beauty in all its forms."
     ].sample
   end
 end
